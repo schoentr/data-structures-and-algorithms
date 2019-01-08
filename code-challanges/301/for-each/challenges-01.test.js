@@ -124,10 +124,10 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-let newArr = [];
+  let newArr = [];
   arr.forEach(function(item,index,arr){
     if( item % 3===0 && item % 5 ===0){
-    newArr.push('Fizz Buzz');
+      newArr.push('Fizz Buzz');
     }else if (item % 3 === 0){
       newArr.push('Fizz');
     }else if (item % 5 === 0){
@@ -135,7 +135,7 @@ let newArr = [];
     }else{
       newArr.push(item);
     }
-  
+
 
   });
   return newArr;
