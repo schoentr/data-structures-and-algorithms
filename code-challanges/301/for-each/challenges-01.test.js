@@ -53,9 +53,8 @@ const removeOne = (num, arr) => {
 };
 
 const removeElements = (arr, callback) => {
-  let j= arr.length;
-  for (let i=0; i<j; i++){
-    callback(i,arr);
+  for (let i=0; i< arr.length; i++){
+    callback(arr[i],arr);
   }
   return arr;
 };
