@@ -11,7 +11,7 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 const appendTheEnd = (str) => {
   str+=' The end.';
   return str;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -28,12 +28,12 @@ console.log(a) prints [1, 2, 3, 1]
 
 const appendFirstToLast = (arr) => {
   arr.push(arr[0]);
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function that accepts an object and an integer as arguments and adds a new property to the object called yearBorn. The value of the yearBorn property should be the integer that was passed in. 
+Write a function that accepts an object and an integer as arguments and adds a new property to the object called yearBorn. The value of the yearBorn property should be the integer that was passed in.
 
 The change should be reflected in the source object that was passed in to the function. That is, the function should modify the object 'in place'.
 
@@ -47,7 +47,7 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 
 const addBirthYearProperty = (obj, year) => {
   obj.yearBorn = year;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -65,8 +65,8 @@ console.log(people[1].isAuthor) prints true
 const setStatusAsAuthor = (people) => {
   people.forEach (p =>{
     p.isAuthor= true;
-  })  
-}
+  });
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -87,7 +87,7 @@ const append = (arr1, arr2) => {
   arr2.forEach (val =>{
     arr1.push(val);
   });
-  } 
+};
 
 
 
