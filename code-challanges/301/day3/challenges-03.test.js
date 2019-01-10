@@ -68,7 +68,7 @@ Here is an example of the input:
 const sortByPrice = (arr) => {
   return arr.sort((a,b) => {
     return a.price-b.price;
-  }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -80,7 +80,12 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  
+  return arr.sort(( a,b) => {
+    let aString= a.toString();
+    let bString= b.toString();
+    return aString.length - bString.length ;
+  });
+
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -102,7 +107,14 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  // Solution code here...
+
+  return arr.sort( ( a,b) => {
+    let nameA=a.lastName.toLowerCase();
+    let nameB=b.lastName.toLowerCase();
+    if (nameA < nameB)
+      return -1;
+    if (nameA > nameB)
+      return 1;});
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,8 +128,33 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  return arr.sort( ( a,b) => {
+    let nameA=a.lastName.toLowerCase();
+    let nameB=b.lastName.toLowerCase();
+    if (nameA < nameB){
+      return -1;}
+    else if (nameA > nameB){
+      return 1;}
+    else{
+      let nameA=a.firstName.toLowerCase();
+      let nameB=b.firstName.toLowerCase();
+      if (nameA < nameB){
+        return -1;}
+      else if (nameA > nameB){
+        return 1;}
+      else{
+        let nameA=a.age;
+        let nameB=b.age;
+        if (nameA < nameB){
+          return -1;}
+        else if (nameA > nameB){
+          return 1;}
+      }
+    }
+  }
+  );
 };
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -142,8 +179,27 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
-};
+  return arr.sort( ( a,b) => {
+    let dayA=a.dayOfWeek;
+    let dayB=b.dayOfWeek;
+    if (dayB === 'Monday'){
+      return -1;}
+    if (dayA === 'Monday' && dayB !=='Monday'){
+      if (dayA === 'TuesdayB'  && dayB !== 'Monday'){
+        return -1;}
+      else if (nameA > nameB){
+        return 1;}
+      else{
+        let nameA=a.age;
+        let nameB=b.age;
+        if (nameA < nameB){
+          return -1;}
+        else if (nameA > nameB){
+          return 1;}
+      }
+    }
+  });
+  };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -156,7 +212,7 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-  // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
