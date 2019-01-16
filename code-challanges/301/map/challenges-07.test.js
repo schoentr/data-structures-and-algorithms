@@ -75,6 +75,7 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 const evenOdd = (arr) => {
   const map = arr.map(x =>{
+    if(isNaN(x)===true ) return 'N/A';
     if(x % 2 === 0) return 'even';
     if(x % 2 === 1) return 'odd';
   });
@@ -125,6 +126,11 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
+  const map = arr.map(x => {
+    return ([x].name);
+
+  });
+  return map;
   // Solution code here...
 };
 
