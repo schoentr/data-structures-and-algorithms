@@ -126,8 +126,8 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  const map = arr.map(x => {
-    return ([x].name);
+  const map = arr.map((x,index) => {
+    return (arr[index].ability.name);
 
   });
   return map;
@@ -177,7 +177,14 @@ const snorlaxStats = {
   weight: 4600,
 };
 
-const extractStats = (arr) => {
+const extractStats = (arr) => { 
+  const map = arr.map((x,index) =>{
+    let size= Object.values(arr[index]).length;
+    for (let i = 0; i<size; i++) { 
+      return({name: arr[index].stat.name, total:(arr[index].effort + arr[index].baseStat)});
+    }
+  });
+  return map;
   // Solution code here...
 };
 
