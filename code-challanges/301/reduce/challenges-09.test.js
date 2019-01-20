@@ -9,10 +9,11 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  let x=1;
-  let y = arr.reduce((acc,curr)=> { x++;
-  });
-  return x;
+  let counter = 0;
+  let num = arr.reduce((acc,curr) =>{
+    counter ++;
+  },0);
+  return counter;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -73,12 +74,12 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   let newArr=[];
-  let x = arr.reduce((acc,curr ) =>{
-    newArr.push(curr.name),acc.name;
-  });
+  let namesArr = arr.reduce((acc,curr ) =>{
+    newArr.push( curr.name);
+  },[]);
   return newArr;
-  // Solution code here...
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -157,6 +158,11 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
+  let avg = arr.reduce((acc,curr)=>{
+    
+  },{count:0,sum:0});
+
+  return ()
   // Solution code here...
 };
 
