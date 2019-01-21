@@ -187,9 +187,14 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  let newArr = arr.reduce ((acc, curr) => {
+    if (isPrime(curr)) {
+      acc++;
+      return acc;
+    } else return acc;
+  },0);
+  return newArr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
