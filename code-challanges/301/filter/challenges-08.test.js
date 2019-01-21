@@ -25,6 +25,8 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
+  let regex = /[aeiou]/gmi;
+  return arr.filter( word => word.match(regex));
   // Solution code here...
 };
 
@@ -38,7 +40,7 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  return arr.filter( element => forbiddenValues.includes(element) === false);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -81,7 +83,7 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+  return arr.filter( stat => stat.baseStat > minBaseStat);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,8 +95,12 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  let filtArr = arr.filter(stat => stat.baseStat >minBaseStat);
+  return filtArr.map( x => x.stat.name);
 };
+
+
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -146,6 +152,7 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
+  
   // Solution code here...
 };
 
@@ -191,7 +198,7 @@ describe('Testing challenge 2', () => {
 
   test('It should not contain any words that do not contain vowels', () => {
     expect(filterStringsWithVowels(['gregor','hound','xyz'])).not.toContain('xyz');
-  })
+  });
 });
 
 describe('Testing challenge 3', () => {
