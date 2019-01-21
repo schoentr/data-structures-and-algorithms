@@ -19,6 +19,7 @@ const countNumberOfElements = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
+
 Write a function named returnNames that, given the Star Wars data, below, uses reduce to return an array containing the names of the characters.
 ------------------------------------------------------------------------------------------------ */
 
@@ -79,7 +80,6 @@ const returnNames = (arr) => {
   },[]);
   return newArr;
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -158,11 +158,14 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
+  let counter = 0;
   let avg = arr.reduce((acc,curr)=>{
-    
-  },{count:0,sum:0});
+    acc+=curr;
+    counter++;
+    return acc;
 
-  return ()
+  },0);
+  return (avg/counter);
   // Solution code here...
 };
 
@@ -184,9 +187,14 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  let newArr = arr.reduce ((acc, curr) => {
+    if (isPrime(curr)) {
+      acc++;
+      return acc;
+    } else return acc;
+  },0);
+  return newArr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
