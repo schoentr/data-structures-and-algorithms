@@ -81,7 +81,6 @@ const returnNames = (arr) => {
   return newArr;
 };
 
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -159,11 +158,14 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
+  let counter = 0;
   let avg = arr.reduce((acc,curr)=>{
+    acc+=curr;
+    counter++;
+    return acc;
 
-  },{count:0,sum:0});
-
-  return ()
+  },0);
+  return (avg/counter);
   // Solution code here...
 };
 
