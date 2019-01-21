@@ -19,6 +19,7 @@ const countNumberOfElements = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
+
 Write a function named returnNames that, given the Star Wars data, below, uses reduce to return an array containing the names of the characters.
 ------------------------------------------------------------------------------------------------ */
 
@@ -159,7 +160,7 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 
 const calculateAverage = (arr) => {
   let avg = arr.reduce((acc,curr)=>{
-    
+
   },{count:0,sum:0});
 
   return ()
