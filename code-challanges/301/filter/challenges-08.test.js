@@ -95,8 +95,13 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  let filtArr = arr.filter(stat => stat.baseStat >minBaseStat);
+  return filtArr.map( x => x.stat.name);
+
 };
+
+
+// Solution code here...
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -193,7 +198,7 @@ describe('Testing challenge 2', () => {
 
   test('It should not contain any words that do not contain vowels', () => {
     expect(filterStringsWithVowels(['gregor','hound','xyz'])).not.toContain('xyz');
-  })
+  });
 });
 
 describe('Testing challenge 3', () => {
