@@ -74,7 +74,7 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 ------------------------------------------------------------------------------------------------ */
 
 const findTagNames = elements => {
-  let newArr= [];
+  
   elements.forEach(str =>{
     let mtc = str.match(/<\/[a-z][0-9a-z]*>/);
     var sillyString = mtc[0].slice(0, -1);
