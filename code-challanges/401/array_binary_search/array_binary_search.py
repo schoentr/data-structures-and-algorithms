@@ -1,7 +1,9 @@
 """ Arrary Binary Seach Mod  """
 
+
 def binary_search(arr, value):
-    """ Binary Search takes in array and a value to seach for..  returns index of value if found  -1 if not"""
+    """ Binary Search takes array and value to search """
+    """ returns index or-1"""
     count = len(arr)
     midpoint = count // 2
     start_index = 0
