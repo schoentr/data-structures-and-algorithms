@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/schoentr/.local/share/virtualenvs/array_binary_search-7y90cBqJ/bin/python",
+    "python.pythonPath": "/usr/local/opt/python/bin/python3.7",
     "python.linting.pylintEnabled": false,
     "python.linting.pep8Enabled": true,
     "python.linting.enabled": true
