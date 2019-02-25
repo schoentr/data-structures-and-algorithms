@@ -7,4 +7,4 @@ verify_ssl = true
 pytest = "*"
 
 [requires]
-python_version = "3.6.7"
+python_version = "3.7"

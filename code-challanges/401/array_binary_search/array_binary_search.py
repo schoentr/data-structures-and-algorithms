@@ -24,6 +24,6 @@ def binary_search(arr, value):
     else:
         return -1
         
-# print(binary_search([1, 2, 3, 4, 5, 6], 5))
+# print(binary_search([1, 2, 3, 4, 5, 6], 9))
 
     
