@@ -10,13 +10,15 @@ class BinaryTree():
         if node is None:
             node=  self.root
         if node.child_left:
-            rtn += self.in_order(node.child_left)
+            rtn +=self.in_order(node.child_left)
         rtn.append(node.value)
         if node.child_right:
             rtn += self.in_order(node.child_right)
         return rtn
 
     def post_order(self, node = None):
+        """This Method traverses across the tree in Order.
+        """
         rtn = []
         if node is None:
             node= self.root
@@ -28,6 +30,8 @@ class BinaryTree():
         return rtn
 
     def pre_order(self, node = None):
+        """This Method traverses across the tree in Order.
+        """
         rtn = []
         if node is None:
             node=  self.root
@@ -37,38 +41,6 @@ class BinaryTree():
         if node.child_right:
             rtn += self.in_order(node.child_right)
         return rtn
-
-
-
-
-
-def printInorder(root): 
-  
-    if root: 
-  
-        # First recur on left child 
-        printInorder(root.left) 
-  
-        # then print the data of node 
-        print(root.val), 
-  
-        # now recur on right child 
-        printInorder(root.right) 
-  
-    def post_order(self):
-        """This method traverses across the tree post Order.
-        """
-        pass
-    def pre_order(curr=None, rtn=''):
-        """This method traverses across the tree pre Order.
-        "ROOT" -->left -->right
-        """
-        if curr is None:
-            curr = self.root
-        rtn += curr.value
-        pre_order(curr.child_left)
-        pre_order(curr.child_right)
-        
 
 class BinarySearchTree(BinaryTree):
     def __init__(self):
@@ -127,3 +99,7 @@ class Node():
         self.value = value
         self.child_left = None
         self.child_right = None
+    def __repr__(self):
+        return 'Node - '+ self.data
+    def __str__(self):
+        return 'Node - '+ self.data
