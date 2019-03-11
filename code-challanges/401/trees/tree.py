@@ -101,20 +101,14 @@ class BinarySearchTree(BinaryTree):
 
         if curr is None:
             curr = self.root
-        print(curr.value, value)
         if value is curr.value:
             return True
-        elif value > curr.value:
-            if curr.child_right :
+        if value > curr.value and curr.child_right :
                 return self.contains(value, curr.child_right)
-            else:
-                return False
-        elif value < curr.value:
-            if curr.child_left:
+        elif curr.child_left:
                 return self.contains(value, curr.child_left)
-            else:
-                return False
-
+        return False
+        
         
 
 
