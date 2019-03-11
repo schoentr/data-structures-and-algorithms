@@ -10,7 +10,7 @@ def test_insert_one_stack():
     fruits = Stack()
     fruits.push('Apples')
     expected = 'Apples'
-    actual = fruits.top.value
+    actual = fruits.
     assert actual == expected
 
 
