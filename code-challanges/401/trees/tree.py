@@ -1,6 +1,30 @@
 class BinaryTree():
     def __init__(self):
         self.root = None
+    def fizzbuzz (self, node = None):
+
+        """
+        This Method traverses across the tree in Order.
+         Replacing the value if divisable by 3 to Fizz,  if divisibale by 5  to buzz and if divisiable by both 3 and 5 to fizzbuzz 
+        """
+        rtn = []
+        if node is None:
+            node=  self.root
+        if node.child_left:
+            rtn +=self.in_order(node.child_left)
+        # import pdb; pdb.set_trace()
+        if int(str(node.value)) % 3 == 0 and node.value % 5 == 0 :
+            node.value = 'fizzbuzz'
+        elif int(str(node.value)) % 3 == 0:
+            node.value = 'fizz'
+        elif int(str(node.value)) % 5 == 0:
+            node.value = 'buzz'
+        rtn.append(node.value)
+        if node.child_right:
+            rtn += self.in_order(node.child_right)
+        
+        return rtn
+
 
     def in_order(self, node = None):
 
@@ -127,7 +151,7 @@ class Node():
         self.child_right = None
     
     def __repr__(self):
-        return 'Node - '+ self.data
+        return 'Node - '+ self.value
     
     def __str__(self):
-        return 'Node - '+ self.data
+        return 'Node - '+ self.value
