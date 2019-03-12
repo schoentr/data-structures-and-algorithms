@@ -1,6 +1,17 @@
+from stacks_and_queues.stacks_and_queues import Queue
+
 class BinaryTree():
     def __init__(self):
         self.root = None
+
+    def breath_first(self):
+        rtn = []
+        queue = Queue()
+        curr = self.root
+        queue.enqueue(curr)
+
+
+    
     def fizzbuzz (self, node = None):
 
         """
@@ -11,17 +22,17 @@ class BinaryTree():
         if node is None:
             node=  self.root
         if node.child_left:
-            rtn +=self.in_order(node.child_left)
+           rtn += self.fizzbuzz(node.child_left)
         # import pdb; pdb.set_trace()
-        if int(str(node.value)) % 3 == 0 and node.value % 5 == 0 :
+        if (node.value) % 3 == 0 and node.value % 5 == 0 :
             node.value = 'fizzbuzz'
-        elif int(str(node.value)) % 3 == 0:
+        elif (node.value) % 3 == 0:
             node.value = 'fizz'
-        elif int(str(node.value)) % 5 == 0:
+        elif (node.value) % 5 == 0:
             node.value = 'buzz'
         rtn.append(node.value)
         if node.child_right:
-            rtn += self.in_order(node.child_right)
+            rtn += self.fizzbuzz(node.child_right)
         
         return rtn
 
@@ -73,8 +84,8 @@ class BinaryTree():
         return rtn
 
 class BinarySearchTree(BinaryTree):
-    def __init__(self):
-        self.root = None
+    # def __init__(self):
+        # self.root = None
     
     def add(self, value):
         """ 
@@ -151,7 +162,7 @@ class Node():
         self.child_right = None
     
     def __repr__(self):
-        return 'Node - '+ self.value
+        return 'Node - '+ (str(self.value))
     
     def __str__(self):
-        return 'Node - '+ self.value
+        return 'Node - '+ (str(self.value))

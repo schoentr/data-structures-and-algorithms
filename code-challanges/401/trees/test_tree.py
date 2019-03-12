@@ -1,5 +1,5 @@
 
-from tree import BinarySearchTree, BinaryTree
+from .trees import BinarySearchTree, BinaryTree
 
 def test_exists():
    assert BinarySearchTree
