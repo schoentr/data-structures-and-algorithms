@@ -29,6 +29,8 @@ class BinaryTree():
         """
         rtn = []
         val = []
+        if not self.root:
+            return None
         if node is None:
             node=  self.root
         if node.child_left:

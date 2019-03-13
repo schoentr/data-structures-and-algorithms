@@ -17,3 +17,19 @@ def test_fizzbuzz_one():
    numbers.fizzbuzz()
    actual = numbers.fizzbuzz()
    assert expected == actual
+
+def test_fizzbuzz_two():
+   numbers= BinarySearchTree()
+   numbers.add(43)
+   numbers.add(60)
+   numbers.add(-3)
+   numbers.add(42)
+   expected = ['fizz','fizz',43,'fizzbuzz']
+   numbers.fizzbuzz()
+   actual = numbers.fizzbuzz()
+   assert expected == actual
+
+def test_fizzbuzz_empty():
+   numbers = BinarySearchTree()
+   actual = numbers.fizzbuzz()
+   assert actual == None
