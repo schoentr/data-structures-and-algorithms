@@ -1,5 +1,5 @@
 
-from .trees import BinarySearchTree, BinaryTree
+from trees.tree import BinarySearchTree
 
 def test_exists():
    assert BinarySearchTree
@@ -106,3 +106,26 @@ def test_post_order():
    actual = fruits.post_order()
    assert expected == actual
   
+def test_breadth_one():
+   fruits = BinarySearchTree()
+   fruits.add('bananas')
+   fruits.add('apples')
+   fruits.add('carrots')
+   fruits.add('mango')
+   fruits.add('pear')
+   fruits.add('cake')
+   fruits.add('cookies')
+   fruits.add('beer')
+   fruits.add('whiskey')
+   expected = ['bananas', 'apples', 'carrots', 'cake', 'mango', 'beer', 'cookies', 'pear', 'whiskey']
+   actual = fruits.breath_first()
+   assert expected == actual
+def test_breadth_two():
+   fruits = BinarySearchTree()
+   fruits.add(67)
+   fruits.add(62)
+   fruits.add(65)
+   fruits.add(90)
+   expected = [67,62,90,65]
+   actual = fruits.breath_first()
+   assert expected == actual

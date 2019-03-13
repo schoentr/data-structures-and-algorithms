@@ -9,6 +9,15 @@ class BinaryTree():
         queue = Queue()
         curr = self.root
         queue.enqueue(curr)
+        # import pdb; pdb.set_trace()
+        while queue.peek():
+            curr = queue.dequeue()
+            if curr.child_left:
+                queue.enqueue(curr.child_left)
+            if curr.child_right:
+                queue.enqueue(curr.child_right)
+            rtn.append(curr.value)
+        return rtn
 
 
     
@@ -19,17 +28,22 @@ class BinaryTree():
          Replacing the value if divisable by 3 to Fizz,  if divisibale by 5  to buzz and if divisiable by both 3 and 5 to fizzbuzz 
         """
         rtn = []
+        val = []
         if node is None:
             node=  self.root
         if node.child_left:
-           rtn += self.fizzbuzz(node.child_left)
-        # import pdb; pdb.set_trace()
-        if (node.value) % 3 == 0 and node.value % 5 == 0 :
-            node.value = 'fizzbuzz'
-        elif (node.value) % 3 == 0:
-            node.value = 'fizz'
-        elif (node.value) % 5 == 0:
-            node.value = 'buzz'
+            rtn += self.fizzbuzz(node.child_left)
+        if type(node.value) is int:
+            print(type(node.value))
+            if (node.value) % 3 == 0 and node.value % 5 == 0 :
+                node.value = 'fizzbuzz'
+            elif (node.value) % 3 == 0:
+                node.value = 'fizz'
+            elif (node.value) % 5 == 0:
+                node.value = 'buzz'
+            # else:
+            #     node.value = str(node.value)
+
         rtn.append(node.value)
         if node.child_right:
             rtn += self.fizzbuzz(node.child_right)
@@ -162,7 +176,7 @@ class Node():
         self.child_right = None
     
     def __repr__(self):
-        return 'Node - '+ (str(self.value))
+        return 'Tree Node - '+ (str(self.value))
     
     def __str__(self):
-        return 'Node - '+ (str(self.value))
+        return 'Tree Node - '+ (str(self.value))
