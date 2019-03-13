@@ -120,6 +120,7 @@ def test_breadth_one():
    expected = ['bananas', 'apples', 'carrots', 'cake', 'mango', 'beer', 'cookies', 'pear', 'whiskey']
    actual = fruits.breath_first()
    assert expected == actual
+
 def test_breadth_two():
    fruits = BinarySearchTree()
    fruits.add(67)

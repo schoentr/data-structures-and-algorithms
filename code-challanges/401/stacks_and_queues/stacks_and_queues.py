@@ -12,8 +12,13 @@ class Queue():
             self.rear = node
                
     def dequeue(self):
+        temp = self.front
         self.front = self.front._next
+        return temp.value
+    
     def peek(self):
+        if not self.front:
+            return False 
         return self.front.value
 
 
