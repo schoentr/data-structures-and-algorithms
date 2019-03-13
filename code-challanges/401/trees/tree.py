@@ -10,7 +10,7 @@ class BinaryTree():
         curr = self.root
         queue.enqueue(curr)
         # import pdb; pdb.set_trace()
-        while queue.peek():
+        while queue.is_empty():
             curr = queue.dequeue()
             if curr.child_left:
                 queue.enqueue(curr.child_left)
