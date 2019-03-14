@@ -18,7 +18,22 @@ class BinaryTree():
                 queue.enqueue(curr.child_right)
             rtn.append(curr.value)
         return rtn
-
+    
+    def find_max_value(self):
+        max_value = self.root.value
+        curr=self.root
+        queue=Queue()
+        queue.enqueue(curr)
+        # import pdb; pdb.set_trace()
+        while queue.is_empty():
+            curr = queue.dequeue()
+            if curr.value > max_value:
+                max_value=curr.value
+            if curr.child_left:
+                queue.enqueue(curr.child_left)
+            if curr.child_right:
+                queue.enqueue(curr.child_right)
+        return max_value 
 
     
     def fizzbuzz (self, node = None):

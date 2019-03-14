@@ -2,8 +2,8 @@ from stacks_and_queues import Stack, Node
 
 class Queue():
     def __init__(self):
-    input = Stack()
-    output = Stack()
+        input = Stack()
+        output = Stack()
 
     def enqueue(self,value):
         self.stack_in.push(value)

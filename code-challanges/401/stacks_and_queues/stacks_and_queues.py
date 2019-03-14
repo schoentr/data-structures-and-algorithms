@@ -18,8 +18,8 @@ class Queue():
         self.front = self.front._next
         return temp.value
     
-    def is_empty():
-        return top is not None
+    def is_empty(self):
+        return self.front is not None
 
     def peek(self):
         if not self.front:
