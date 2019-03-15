@@ -1,4 +1,4 @@
-from stacks_and_queues import Stack, Queue
+from stacks_and_queues.stacks_and_queues import Stack, Queue
 
 def test_stack_exists():
     assert Stack
@@ -10,7 +10,7 @@ def test_insert_one_stack():
     fruits = Stack()
     fruits.push('Apples')
     expected = 'Apples'
-    actual = fruits.
+    actual = fruits.top.value
     assert actual == expected
 
 

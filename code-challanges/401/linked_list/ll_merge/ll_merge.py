@@ -1,4 +1,4 @@
-from linked_list import LinkedList
+from linked_list.linked_listf import LinkedList
 
 def ll_merge(list_A, list_B):
     curr_B = list_B.head
@@ -35,5 +35,5 @@ tens.insert('20')
 # tens.insert('50')
 print(tens.print())
 
-ll_merge(ones,tens)
+ll_merged(ones,tens)
 print(ones.print())

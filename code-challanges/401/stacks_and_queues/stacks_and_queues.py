@@ -37,9 +37,9 @@ class Stack():
         self.top = node
 
     def pop (self):
-        if not self.front:
+        if not self.top:
             return None
-        temp = self.front
+        temp = self.top
         self.top = self.top._next
         return temp.value
     
