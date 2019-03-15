@@ -9,6 +9,7 @@ verify_ssl = true
 pytest = "*"
 pytest-watch = "*"
 pytest-cov = "*"
+autopep8 = "*"
 
 [requires]
 python_version = "3.7"

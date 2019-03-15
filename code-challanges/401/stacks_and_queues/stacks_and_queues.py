@@ -12,13 +12,18 @@ class Queue():
             self.rear = node
                
     def dequeue(self):
+        if not self.front:
+            return None
         temp = self.front
         self.front = self.front._next
         return temp.value
     
+    def is_empty(self):
+        return self.front is not None
+
     def peek(self):
         if not self.front:
-            return False 
+            return None 
         return self.front.value
 
 
@@ -32,8 +37,19 @@ class Stack():
         self.top = node
 
     def pop (self):
+        if not self.top:
+            return None
+        temp = self.top
         self.top = self.top._next
+        return temp.value
+    
+    def is_empty():
+        return top is not None
+    
+    
     def peek(self):
+        if not self.top:
+            return None
         return self.top.value
 
 
