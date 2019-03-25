@@ -34,6 +34,35 @@ class BinaryTree():
             if curr.child_right:
                 queue.enqueue(curr.child_right)
         return max_value 
+    
+    
+    def find_height(self):
+        height_counter = 0
+        marker= None
+        curr = self.root
+        queue = Queue()
+        queue.enqueue(curr)
+        check_queue = Queue()
+        while queue.is_empty():
+            curr=queue.dequeue()
+            if curr.child_left:
+                queue.enqueue(curr.child_left)
+            if curr.child_right:
+                queue.enqueue(curr.child_right)
+            if marker is curr.value:
+                marker= None
+            if marker is None:
+                if curr.child_left or curr.child_right:
+                    if curr.child_left:
+                        height_counter +=1  
+                        marker = curr.child_left.value
+                    if curr.child_right:
+                        marker = curr.child_right.value
+                        height_counter +=1
+        return height_counter
+            
+                
+
 
     
     def fizzbuzz (self, node = None):
