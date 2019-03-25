@@ -18,4 +18,4 @@ Big O(size) == O(n)
 
 
 ## Solution
-https://github.com/schoentr/data-structures-and-algorithms/blob/master/code-challanges/401/assets/repeat_word.JPG
+https://github.com/schoentr/data-structures-and-algorithms/blob/master/code-challanges/401/assets/repeat_word.jpg
