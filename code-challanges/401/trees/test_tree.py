@@ -130,3 +130,55 @@ def test_breadth_two():
    expected = [67,62,90,65]
    actual = fruits.breath_first()
    assert expected == actual
+
+def test_height_one():
+   numbers = BinarySearchTree()
+   numbers.add(10)
+   numbers.add(9)
+   numbers.add(8)
+   numbers.add(7)
+   numbers.add(3)
+   numbers.add(35)
+   numbers.add(12)
+   numbers.add(43)
+   actual = numbers.find_height()
+   assert  5    == actual
+
+def test_height_two():
+   numbers = BinarySearchTree()
+   numbers.add(50)
+   numbers.add(100)
+   numbers.add(200)
+   numbers.add(150)
+   # numbers.add(5)
+   # numbers.add(35)
+   # numbers.add(13)
+   # numbers.add(43)
+   # numbers.add(4)
+   # numbers.add(159)
+   # numbers.add(33)
+   # numbers.add(322)
+   # numbers.add(543)
+   # numbers.add(352)
+   # numbers.add(123)
+   # numbers.add(443)
+   actual = numbers.find_height()
+   assert  3 == actual
+
+def test_height_three():
+   numbers  =  BinarySearchTree()
+   numbers.add(10)
+   
+   numbers.add(9)
+   numbers.add(11)
+   actual = numbers.find_height()
+   assert 1 == actual
+   
+def test_height_four():
+   numbers  =  BinarySearchTree()
+   numbers.add(10)
+   numbers.add(9)
+   numbers.add(11)
+   numbers.add(13)
+   actual = numbers.find_height()
+   assert 2 == actual
