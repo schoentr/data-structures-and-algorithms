@@ -3,6 +3,47 @@ from stacks_and_queues.stacks_and_queues import Queue
 class BinaryTree():
     def __init__(self):
         self.root = None
+    def traverse_in_order(self):
+            
+            def _traverse(node):
+                if not node:
+                    return
+                yield from _traverse(node.child_left)
+                yield node.value
+                yield from _traverse(node.child_right)
+
+            return _traverse(self.root)
+
+    # def traverse_pre_order(self):
+            
+    #         def _traverse(node):
+    #             if not node:
+    #                 return
+    #             yield from _traverse(node.left)
+    #             yield node.value
+    #             yield from _traverse(node.right)
+
+    #         return _traverse(self.root)
+    # def traverse_post_order(self):
+            
+    #         def _traverse(node):
+    #             if not node:
+    #                 return
+    #             yield from _traverse(node.left)
+    #             yield node.value
+    #             yield from _traverse(node.right)
+
+    #         return _traverse(self.root)
+    # def traverse_in_order(self):
+            
+    #         def _traverse(node):
+    #             if not node:
+    #                 return
+    #             yield from _traverse(node.left)
+    #             yield node.value
+    #             yield from _traverse(node.right)
+
+    #         return _traverse(self.root)
 
     def breath_first(self):
         rtn = []
