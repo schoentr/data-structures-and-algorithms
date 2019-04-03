@@ -1,5 +1,43 @@
+from copy import copy, deepcopy
+
 class LinkedList():
     head = None
+    def __init__(self, iterable=None):
+        """This initalizes the list
+        """
+        self.head = None
+        if iterable:
+            for value in iterable:
+                self.insert(value)
+
+    def __iter__(self):
+        """This makes the linked list iterable
+        """
+        current=self.head
+        while current:
+            yield current.value
+            current = current._next
+
+    def __add__(self,iterable):
+        new_list=deepcopy(self)
+        for value in iterable:
+            new_list.insert(value)
+        return new_list
+
+    
+    
+    def __iadd__(self, value):
+        """This method makes it able to use "+="to add value to linked list
+        
+        Arguments:
+            value  -- [data to be added to the linked list]
+        """
+        self.insert(value)
+        return self
+
+
+    
+
 
     def insert(self, value):
         """This Method inserts a value into the Linked List
