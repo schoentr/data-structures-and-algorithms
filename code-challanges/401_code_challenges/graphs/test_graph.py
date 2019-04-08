@@ -80,3 +80,9 @@ def test_neighbors():
     assert expected_apple == [('banana', 1)]
     assert expected_dog == [('cake', 2), ('egg', 4)]
     assert expected_foo == []
+
+def test_one_node_one_edge():
+    g= Graph()
+    vertex_apple= g.add('apple')
+    g.add_edge(vertex_apple,vertex_apple)
+    assert g._graph['apple'] == [('apple', 1),('apple',1)]
