@@ -1,4 +1,5 @@
 from linked_list.linked_list import LinkedList
+from stacks_and_queues.stacks_and_queues import Queue
 
 
 class Graph:
@@ -24,11 +25,11 @@ class Graph:
 
     def add_edge(self, node_a, node_b, weight=1):
         """This adds an edge between two verticies
-        
+
         Arguments:
             node_a {node/vertex} 
             node_b {node/vertex} 
-        
+
         Keyword Arguments:
             weight {int} -- the weight of the edge (default: {1})
         """
@@ -38,7 +39,7 @@ class Graph:
 
     def get_vertices(self):
         """This return a list of all vertices in the graph
-        
+
         Returns:
             [list] -- [a list of all the vertices]
         """
@@ -49,7 +50,7 @@ class Graph:
 
     def size(self):
         """This method returns the number of nodes in the graph
-        
+
         Returns:
             [int] 
         """
@@ -59,19 +60,46 @@ class Graph:
             output.append(key)
         return len(output)
 
-    def get_neighbors(self, node):
+    def get_neighbors(self, value):
         """This method return a list of all connections with a given node
-        
+
         Arguments:
             node {vertix} 
-        
+
         Returns:
             [list] -- A list of tuples (with the name, and weight)
         """
         output = []
-        for item in self._graph[node.value]:
+        for item in self._graph[value]:
             output.append(item)
         return output
+
+    def breadth_first(self, start):
+        """This method does a breadth first traversal of a graph
+        
+        Arguments:
+            node -- [starting poing of the traversal]
+        
+        Returns:
+            [list] -- [a list of all connected nodes]
+        """
+
+        
+        explored = []
+        
+        queue = Queue()
+        queue.enqueue(start)
+    
+        while queue.peek() is not None:
+            node = queue.dequeue()
+            if node not in explored:
+                explored.append(node)
+                
+                neighbors = self._graph[node]
+                for neighbor in neighbors:
+                    queue.enqueue(neighbor[0])
+        return explored
+    
 
 
 class Vertex:
