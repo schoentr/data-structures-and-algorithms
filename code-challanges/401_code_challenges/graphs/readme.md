@@ -11,6 +11,7 @@
  * The **get_vertices** this method returns a list of all the vertices in the graph
  * The **size**  method return the number of verticies in the graph
  * The **get_neighbors**  method takes in a given vertex and returns its neighbors, and the weight of the edge.   This is returned as a list of tuples (neighbor, weight) 
+ * the **breadth_first** method takes in a starting node, and traverses the graph, returning a list of all nodes connected to the starting node.
 
 
 
