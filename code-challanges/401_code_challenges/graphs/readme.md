@@ -11,7 +11,8 @@
  * The **get_vertices** this method returns a list of all the vertices in the graph
  * The **size**  method return the number of verticies in the graph
  * The **get_neighbors**  method takes in a given vertex and returns its neighbors, and the weight of the edge.   This is returned as a list of tuples (neighbor, weight) 
- * the **breadth_first** method takes in a starting node, and traverses the graph, returning a list of all nodes connected to the starting node.
+ * the **breadth_first** method takes in a starting node, and traverses the graph breadth first, returning a list of all nodes connected to the starting node.
+ * the **depth_first** method takes in a starting node, and traverses the graph depth first, returning a list of all nodes connected to the starting node.
 
 
 
@@ -23,3 +24,6 @@
 - [x] Neighbors are returned with the weight between nodes included
 - [x] The proper size is returned, representing the number of nodes in the graph
 - [x] An empty graph properly returns null
+
+## Solutions
+https://github.com/schoentr/data-structures-and-algorithms/blob/master/code-challanges/401/assets/depth_first_graph.jpg
