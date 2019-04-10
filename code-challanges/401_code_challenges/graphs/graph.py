@@ -1,5 +1,5 @@
 from linked_list.linked_list import LinkedList
-from stacks_and_queues.stacks_and_queues import Queue
+from stacks_and_queues.stacks_and_queues import Stack, Queue
 
 
 class Graph:
@@ -76,30 +76,45 @@ class Graph:
 
     def breadth_first(self, start):
         """This method does a breadth first traversal of a graph
-        
+
         Arguments:
             node -- [starting poing of the traversal]
-        
+
         Returns:
             [list] -- [a list of all connected nodes]
         """
 
-        
         explored = []
-        
+
         queue = Queue()
         queue.enqueue(start)
-    
+
         while queue.peek() is not None:
             node = queue.dequeue()
             if node not in explored:
                 explored.append(node)
-                
+
                 neighbors = self._graph[node]
                 for neighbor in neighbors:
                     queue.enqueue(neighbor[0])
         return explored
-    
+
+    def depth_first(self, start):
+        visited = []
+        s = Stack()
+        s.push(start)
+        visited.append(start)
+        while s.is_empty() == False:
+            curr = s.peek()
+            flag = False
+            for neighbor in self.get_neighbors(curr):
+                if neighbor[0] not in visited and flag == False:
+                    s.push(neighbor[0])
+                    visited.append(neighbor[0])
+                    flag = True
+            if flag == False:
+                s.pop()
+        return visited
 
 
 class Vertex:
